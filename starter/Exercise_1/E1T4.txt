@@ -1,0 +1,12 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+Ans:
+
+1. It is a bad architecvture choice and practice to have allowed the IAM role have administrative access to S3 buckets, I believe this is to avoided at all cost. 
+
+2. The default private routes have destination cidr to the internet, so a malicious resource in the private subnet could communicate with any endpoint on the internet
+
+3. The SG of the WebApp is very porous, Security groups should not allow unrestricted access to ports with high risk and open to allowing multiple port access from the internet to WebSevice instance in the public subnet. 
+It should be the other way round by allowing the Web Service reside in the Private subnet, 
+This should reside in a private subnet and use port 443 instead of 80, 
+ignorer to ensure SSL termination from the AppLoadBalancerSG instance. 

@@ -1,0 +1,29 @@
+# Identify tools that will allow you to do the following:
+
+Ans:
+
+1. Scan infrastructure as code templates
+    - Use Terra-scan: Detect compliance and security violations across Infrastructure as Code (IaC) to mitigate risk before provisioning cloud native infrastructure
+     
+~ Example vulnerability:
+- Use of Non-SSL/TLS 
+- Use of Resource prioritization
+- Use of proper configuration
+- Use of proper permission( least privilege)
+
+
+2. Scan AMI’s or containers for OS vulnerabilities
+     - Use Clair scanner, AquaSec or Qualys Virtual Scanner
+
+~ Example vulnerability:
+ - CVE vulnerabilities 
+
+3. Scan an AWS environment for cloud configuration vulnerabilities
+     	- AWS super SecurityHub is the right tool for the job	
+	- AWS Inspector for automated vulnerability management
+- 
+
+~ Example vulnerability
+     - Password policies compliance
+     - S3 buckets policy with public write or read permissions 
+     
