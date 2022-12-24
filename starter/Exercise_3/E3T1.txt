@@ -1,0 +1,21 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+
+Ans:
+1. There were basically two type of findings from guard duty that was very relevant to the attack. 
+
+i. - The first was the findings on unauthorizedAccess to the from an unknown IP address performing SSH brute force attacks against i-0769960c42c4766e7. 
+Brute force attacks are used to gain unauthorized access to your instance by guessing the SSH password. 
+
+UnauthorizedAccess:EC2/SSHBruteForce
+Instance: i-0b02a87887ce6ae79 
+
+ii. -  An API was invoke against root credentials. 
+An API GetRole was invoked using root credentials from IP address 37.228.202.47. Meaning that a root credentials of my AWS account in is being used to make requests to AWS services. 
+
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+
+Ans:
+2. GuardDuty delivers information about potential security risks that it detects in my environment as findings which gets displayed on GuardDuty findings page.
+
+AWS Guard Duty constantly monitors data from AWS CloudTrail,Guard Duty would have discovered it by using the VPC Flow logs, which have information about traffic going to and from the EC2 network interfaces, VPC Flow Logs and DNS Logs. To detect the SSH brute attack
